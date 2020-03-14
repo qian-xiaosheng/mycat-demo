@@ -33,16 +33,26 @@
             <version>2.1.2</version>
         </dependency>
 
+        <!--aop切面jar包-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+            <version>2.2.5.RELEASE</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
+
+        <!--注意：springboot默认mysql版本是8.0，而linux系统默认只支持安装mysql最高版本是5.1-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
+            <version>5.1.37</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

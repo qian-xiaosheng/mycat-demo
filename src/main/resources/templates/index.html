@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息</title>
+</head>
+<body>
+<div>===添加===</div>
+<form th:action="@{/mycat/add}" method="post">
+    用户名：<input type="text" name="name"><br>
+    年龄：<input type="text" name="age"><br>
+    性别：<input type="radio" value="男" name="sex">男<input type="radio" value="女" name="sex">女<br>
+    <input type="submit" value="添加">
+</form>
+<hr>
+<div>===修改===</div>
+<form th:action="@{/mycat/update}" method="post">
+    id：<input type="text" name="id"><br>
+    用户名：<input type="text" name="name"><br>
+    年龄：<input type="text" name="age"><br>
+    性别：<input type="radio" value="男" name="sex">男<input type="radio" value="女" name="sex">女<br>
+    <input type="submit" value="修改">
+</form>
+<hr>
+<div>===删除===</div>
+<form th:action="@{/mycat/delete}" method="get">
+    id：<input type="text" name="id">
+    <input type="submit" value="删除">
+</form>
+<hr>
+<div>===查询一个===</div>
+<form th:action="@{/mycat/readone}" method="get">
+    id：<input type="text" name="id" value="1">
+    <input type="submit" value="查询">
+</form>
+<div>===分页查询===</div>
+<form th:action="@{/mycat/readlimit}" method="get">
+    当前页：<input type="text" name="pageIndex" value="0">
+    每页几条：<input type="text" name="pageNum" value="10">
+    <input type="submit" value="分页查询">
+</form>
+</body>
+</html>

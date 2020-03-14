@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>查询</title>
+    <style type="text/css">
+        * {color: gray;font-size: 12px}
+        table {
+            margin: 20px auto;
+            width: 500px;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,td {
+            border: 1px solid black;
+            height: 35px;
+            border-collapse: collapse;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+    </tr>
+    <tr th:each="user : ${list}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.age}"></td>
+        <td th:text="${user.sex}"></td>
+    </tr>
+    <tr>
+        <td colspan="4"><a th:href="@{/mycat}">返回</a></td>
+    </tr>
+</table>
+</body>
+</html>
