@@ -13,7 +13,7 @@
     <select id="queryById" resultMap="TUserMap">
         select
           id, name, age, sex
-        from yida.t_user
+        from yida_mycat.t_user
         where id = #{id}
     </select>
 
@@ -21,7 +21,7 @@
     <select id="queryAllByLimit" resultMap="TUserMap">
         select
           id, name, age, sex
-        from yida.t_user
+        from yida_mycat.t_user
         limit #{offset}, #{limit}
     </select>
 
@@ -29,7 +29,7 @@
     <select id="queryAll" resultMap="TUserMap">
         select
           id, name, age, sex
-        from yida.t_user
+        from yida_mycat.t_user
         <where>
             <if test="id != null">
                 and id = #{id}
@@ -48,13 +48,13 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="id" useGeneratedKeys="true">
-        insert into yida.t_user(name, age, sex)
+        insert into yida_mycat.t_user(name, age, sex)
         values (#{name}, #{age}, #{sex})
     </insert>
 
     <!--通过主键修改数据-->
     <update id="update">
-        update yida.t_user
+        update yida_mycat.t_user
         <set>
             <if test="name != null and name != ''">
                 name = #{name},
@@ -71,7 +71,7 @@
 
     <!--通过主键删除-->
     <delete id="deleteById">
-        delete from yida.t_user where id = #{id}
+        delete from yida_mycat.t_user where id = #{id}
     </delete>
 
 </mapper>
